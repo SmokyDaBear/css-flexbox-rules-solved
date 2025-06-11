@@ -12,6 +12,8 @@ body {
 
 .content {
   padding: 30px;
+  display: flex;
+  flex-direction: row;
 }
 
 h2 {
@@ -33,19 +35,63 @@ form {
   color: #a9a9a9;
   font-weight: unset;
 }
-
+/*added gap for the forms heading and subheading*/
 #sign-in,
 #sign-up {
   width: 100%;
+  display: flex;
+  flex-direction: column; /* it says: "Wrap each group of a label and
+  input elements with a container representing a row."
+  but It seems like a column layout is necessary to match the solved example */
+  gap: 20px;
+  margin-bottom: 20px; /* Look, I know it says not to use margin
+  but this looks better with a margin-bottom */
+}
+/*added gap property for space between elements in both forms*/
+#sign-in-form,
+#sign-up-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* 30 px gap between elements in the form */
+}
+/*added gap here for space between the label and input elements*/
+.form-input-control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* 6 px gap between label and input elements */
 }
 
 a {
   color: #335eea;
   text-decoration: none;
 }
-
-label {
+/* this  line of code is edited because the rules state that only 
+the labels followed  by a text input should be bold, not radio labels 
+this took a little googling but let me know if this is a good way or
+if I should have just added a separate class like "bold-label" or something*/
+.form-input-control:not(:has(input[type="radio"])) label {
   font-weight: bold;
+}
+/* this code fixes the submit-form buttons and makes them centered*/
+.form-submit-control {
+  display: flex;
+  gap: 10px; /* 10 px gap between the submit button and the forgot password */
+  justify-content: center;
+  align-items: center; /* so the Forgot Password link is vertically centered */
+}
+.form-group-horizontal-control {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* 20 px gap between the two input elements */
+  align-items: center;
+}
+/* this adds a little padding to make the dropdowns sized a bit more uniformly 
+and makes them take up the full width of the container with flex:1
+is there another way than using padding for this? */
+.form-group-horizontal-control .form-input-control,
+select {
+  padding: 5px;
+  flex: 1;
 }
 
 input {
