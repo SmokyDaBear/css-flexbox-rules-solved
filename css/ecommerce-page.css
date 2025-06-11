@@ -1,5 +1,8 @@
 /* 👇👇👇 SCROLL DOWN TO THE "EDIT STYLES BENEATH" comment (line 180) 👇👇👇*/
-
+/* Hey, before you grade this, I have a question. Since you can import more than one style sheet, if you're going to have
+multiple tile layouts like in this with the grid layout, line layout, etc, is it better to put everything in one CSS file 
+like this, or to have multiple for each format. I thought maybe it depended on how many lines there were, but it just 
+seems better for maintainability. Thanks in advance!*/
 * {
   padding: 0;
   margin: 0;
